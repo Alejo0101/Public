@@ -37,7 +37,7 @@ body {
   font-size: 1rem;
 }
 
-.hidden { display: none; }
+.hidden { display: none !important; }
 
 .loader, .error {
   text-align: center;
