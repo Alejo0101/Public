@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__title">comunired</h1>
+            <p class="header__sub">publicaciones de tu comunidad</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="toolbar">
+            <input type="text" id="searchInput" class="toolbar__search" placeholder="Buscar publicación"> 
+            <span id="counter" class="toolbar__counter">Cargando...</span>
+        </section>
+        <div id="loader" class="loader">Cargando Publicaciones...</div>
+        <div id="errorMsg" class="error hidden">bi se oudieron cargar las publicaciones</div>
+        <section class="grid" id="postsGrid"></section>
+        <div id="modal" class="modal hidden">
+            <div class="modal__box"><button id="modalClose" class="modal__close">x</button>
+                <h2 id="modalTitle" class="modal__title"></h2>
+                <p id="modalBody" class="modal__body"></p>
+                <p id="modalUser" class="modal__user"></p>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
