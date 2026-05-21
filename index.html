@@ -1,35 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZU</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMUNIRED</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <div id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+        class="logo"
+      >
+
+      <h1>COMUNIRED</h1>
+
+      <input
+        type="text"
+        id="usernameInput"
+        placeholder="Ingresa tu nombre"
+      >
+
+      <button id="loginBtn">
+        Entrar
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="app" class="hidden">
+
     <header class="header">
-        <div class="header__inner">
-            <h1 class="header__title">comunired</h1>
-            <p class="header__sub">publicaciones de tu comunidad</p>
+
+      <div class="header-left">
+
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+          class="header-logo"
+        >
+
+        <div>
+          <h1>COMUNIRED</h1>
+          <p>Tu comunidad digital</p>
         </div>
+
+      </div>
+
+      <div class="header-right">
+
+        <button id="themeBtn">
+          🌙
+        </button>
+
+        <div class="user-box">
+
+          <img id="navAvatar">
+
+          <span id="navUsername"></span>
+
+        </div>
+
+        <button id="logoutBtn">
+          Salir
+        </button>
+
+      </div>
+
     </header>
 
     <main class="main">
-        <section class="toolbar">
-            <input type="text" id="searchInput" class="toolbar__search" placeholder="Buscar publicación"> 
-            <span id="counter" class="toolbar__counter">Cargando...</span>
-        </section>
-        <div id="loader" class="loader">Cargando Publicaciones...</div>
-        <div id="errorMsg" class="error hidden">bi se oudieron cargar las publicaciones</div>
-        <section class="grid" id="postsGrid"></section>
-        <div id="modal" class="modal hidden">
-            <div class="modal__box"><button id="modalClose" class="modal__close">x</button>
-                <h2 id="modalTitle" class="modal__title"></h2>
-                <p id="modalBody" class="modal__body"></p>
-                <p id="modalUser" class="modal__user"></p>
-            </div>
-        </div>
+
+      <section class="create-post">
+
+        <h2>Crear publicación</h2>
+
+        <input
+          type="text"
+          id="newTitle"
+          placeholder="Título"
+        >
+
+        <textarea
+          id="newBody"
+          placeholder="¿Qué estás pensando?"
+        ></textarea>
+
+        <button id="publishBtn">
+          Publicar
+        </button>
+
+      </section>
+
+      <section class="toolbar">
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar publicaciones..."
+        >
+
+        <span id="counter">
+          0 publicaciones
+        </span>
+
+      </section>
+
+      <div id="loader" class="loader">
+        Cargando publicaciones...
+      </div>
+
+      <section id="postsGrid" class="grid"></section>
+
     </main>
-    <script src="main.js"></script>
+
+  </div>
+
+  <div id="modal" class="modal hidden">
+
+    <div class="modal-box">
+
+      <button id="modalClose" class="modal-close">
+        ✕
+      </button>
+
+      <img id="modalAvatar" class="modal-avatar">
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalUser"></p>
+
+      <img id="modalImage" class="modal-image">
+
+      <p id="modalBody"></p>
+
+      <div id="commentsContainer"></div>
+
+      <div class="comment-section">
+
+        <input
+          type="text"
+          id="commentInput"
+          placeholder="Escribe un comentario"
+        >
+
+        <button id="commentBtn">
+          Comentar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+
 </body>
 </html>

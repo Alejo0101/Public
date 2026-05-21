@@ -1,124 +1,340 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: sans-serif;
-  background: #f5f5f5;
-  color: #333;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f3f4f6;
+  color:#111827;
 }
 
-.header {
-  background: #1a73e8;
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
+body.dark{
+  background:#111827;
+  color:white;
 }
 
-.main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.hidden{
+  display:none !important;
 }
 
-.toolbar {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+.login-screen{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#1d4ed8;
 }
 
-.toolbar__search {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+.login-box{
+  background:white;
+  width:100%;
+  max-width:400px;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
 }
 
-.hidden { display: none !important; }
-
-.loader, .error {
-  text-align: center;
-  padding: 2rem;
-  color: #666;
+.logo{
+  width:80px;
+  margin-bottom:20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+.login-box input{
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  border:none;
+  border-radius:10px;
+  background:#ececec;
 }
 
-.card {
-  background: white;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  cursor: pointer;
+.login-box button{
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
 }
 
-.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-.card__title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin-bottom: 0.5rem;
+.header{
+  background:#2563eb;
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.card__body {
-  font-size: 0.85rem;
-  color: #777;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 100;
+.header-logo{
+  width:50px;
 }
 
-.modal__box {
-  background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  max-width: 500px;
-  width: 100%;
-  position: relative;
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.modal__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
+.header-right button{
+  border:none;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
 }
 
-.modal__title {
-  font-size: 1.1rem;
-  text-transform: capitalize;
-  margin-bottom: 0.75rem;
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.modal__body { color: #555; line-height: 1.6; }
-.modal__user { margin-top: 1rem; font-size: 0.8rem; color: #999; }
+.user-box img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+}
 
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.8rem;
-  color: #aaa;
+.main{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.create-post{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+body.dark .create-post{
+  background:#1f2937;
+}
+
+.create-post input,
+.create-post textarea,
+.toolbar input,
+.comment-section input{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#ececec;
+}
+
+body.dark input,
+body.dark textarea{
+  background:#374151;
+  color:white;
+}
+
+.create-post textarea{
+  min-height:120px;
+  resize:none;
+}
+
+.create-post button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}
+
+.toolbar{
+  display:flex;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.toolbar input{
+  width:100%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.dark .card{
+  background:#1f2937;
+}
+
+.card-image{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-user{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.card-user img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+}
+
+.card-content h2{
+  margin-bottom:10px;
+}
+
+.card-content p{
+  color:#6b7280;
+  margin-bottom:15px;
+}
+
+.card-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.card-buttons button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.like-btn{
+  background:#ef4444;
+  color:white;
+}
+
+.open-btn{
+  background:#2563eb;
+  color:white;
+}
+
+.delete-btn{
+  background:#111827;
+  color:white;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding:20px;
+}
+
+.modal-box{
+  background:white;
+  width:100%;
+  max-width:700px;
+  border-radius:20px;
+  padding:25px;
+  position:relative;
+  max-height:90vh;
+  overflow:auto;
+}
+
+body.dark .modal-box{
+  background:#1f2937;
+}
+
+.modal-close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  border:none;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.modal-avatar{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  margin-bottom:15px;
+}
+
+.modal-image{
+  width:100%;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+.comment-section{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.comment-section button{
+  border:none;
+  padding:12px;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}
+
+.comment{
+  background:#ececec;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+body.dark .comment{
+  background:#374151;
+}
+
+.loader{
+  text-align:center;
+  padding:30px;
+}
+
+@media(max-width:768px){
+
+  .header{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .toolbar{
+    flex-direction:column;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
 }
